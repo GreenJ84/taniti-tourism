@@ -35,7 +35,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 5. Deploy to GitHub Pages
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
       - name: Deploy to GitHub Pages
         run: |
           git config --global user.name "GitHub Actions"
