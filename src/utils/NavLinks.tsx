@@ -20,7 +20,7 @@ const navLinks = () => {
     <>
     {navLinkData.map((link, index) => (
       <li key={index}>
-        <a href={link.link}>
+        <a href={`taniti-tourism/${link.link}`}>
           {link.name}
         </a>
       </li>
