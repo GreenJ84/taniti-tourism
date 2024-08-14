@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 interface INavLink {
   name: string;
@@ -20,9 +21,9 @@ const navLinks = () => {
     <>
     {navLinkData.map((link, index) => (
       <li key={index}>
-        <a href={`taniti-tourism/${link.link}`}>
+        <Link to={link.link}>
           {link.name}
-        </a>
+        </Link>
       </li>
     ))}
     </>
