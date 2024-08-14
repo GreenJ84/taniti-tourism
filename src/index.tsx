@@ -22,11 +22,11 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />}>
+        <Route path="/" element={<App/>} >
           <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="activities" element={<Activities />} />
-          <Route path="cuisine" element={<Cuisine />} />
+          <Route path="About" element={<About />} />
+          <Route path="Activities" element={<Activities />} />
+          <Route path="Cuisine" element={<Cuisine />} />
           <Route path="Lodging" element={<FAQ />} />
           <Route path="Transportation" element={<Lodging />} />
           <Route path="FAQ" element={<Transportation />} />

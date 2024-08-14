@@ -3,16 +3,19 @@ import { Outlet } from "react-router-dom";
 
 import Navigation from './shared/Navigation';
 import Footer from './shared/Footer';
+import { AppContextProvider } from './utils/AppContext';
 
-import './App.css';
 
 function App() {
+
   return (
-    <>
+    <AppContextProvider>
       <Navigation />
-      <Outlet />
+      <main>
+        <Outlet />
+      </main>
       <Footer />
-    </>
+    </AppContextProvider>
   );
 }
 
