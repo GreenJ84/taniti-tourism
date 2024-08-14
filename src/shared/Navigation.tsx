@@ -1,9 +1,8 @@
-import React, { useContext } from 'react'
+import React from 'react'
 
 import NavLinks from '../utils/NavLinks'
 import { Link, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
-import { AppContext } from '../utils/AppContext'
 
 const Navigation = () => {
   const location = useLocation();
