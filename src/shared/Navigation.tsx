@@ -12,10 +12,9 @@ const Navigation = () => {
     <Header>
       <nav>
         <Link to="/" id="brand">
-          <img src="taniti-logo.avif" alt="Taniti Brand" />
+          <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=306,fit=crop/AE05DJn12aclyvvO/logo-small-YZ9WJReWvKi9J4QL.png" alt="Taniti Brand" />
         </Link>
-        {isHomePage ?
-          <></> :
+        {!isHomePage &&
           <ul>
             <NavLinks />
           </ul>

@@ -2,7 +2,7 @@ body[data-theme="dark"] {
   --text: 224, 230, 237;
   --primary-bg:  13, 27, 42;
   --secondary-bg:27, 75, 90;
-  --accent-color: 255, 165, 0;
+  --accent: 255, 165, 0;
   --highlight: 255, 200, 87;
 }
 
@@ -10,7 +10,7 @@ body[data-theme="light"] {
   --text: 51, 51, 51;
   --primary-bg:  244, 241, 222;
   --secondary-bg:138, 198, 209;
-  --accent-color: 88, 164, 176;
+  --accent: 88, 164, 176;
   --highlight: 255, 132, 124;
 }
 
@@ -46,10 +46,18 @@ nav {
     margin-right: 20px;
     display: flex;
     justify-content: space-evenly;
+    > li a {
+      text-align: center;
+    }
   }
 }
 
-nav a:not(#brand), nav a:not(#brand):active, nav a:not(#brand):visited {
+a.link,
+nav > ul a,
+a.link:active,
+nav > ul a:active,
+a.link:visited,
+nav > ul a:visited {
   padding: 10px 20px 15px;
   text-decoration: none;
   color: rgb(var(--highlight));
@@ -57,11 +65,39 @@ nav a:not(#brand), nav a:not(#brand):active, nav a:not(#brand):visited {
   border-radius: 5px;
   text-underline-offset: 5px;
 }
-nav a:not(#brand):hover {
+nav > ul a:not(#brand):hover,
+nav > ul a.active {
   text-decoration: underline;
-  background-color: rgba(var(--accent-color), 0.2);
+  background-color: rgba(var(--accent), 0.2);
+}
+nav > ul a.active {
+  color: rgb(var(--accent));
+  background-color: unset;
 }
 
 main {
-  min-height: 90dvh;
+  width: 100vw;
+  min-height: 74dvh;
+}
+
+h1, h2 {
+  text-align: center;
+}
+h2 {
+  font-size: 2.5rem;
+}
+
+hr{
+  width: 85%;
+  margin: 10dvh auto;
+}
+
+p.para {
+  font-size: 1.5em;
+  font-weight: 550;
+  padding: 0 5%;
+  text-align: justify;
+  margin-bottom: 50px;
+  line-height: 1.6;
+  text-indent: 10%;
 }
