@@ -1,5 +1,5 @@
 import React from 'react'
-import ResourceItem, { IResourceInfo, IResourceProps } from '../shared/ResourceItem'
+import ResourceItem, { IResourceInfo } from '../shared/ResourceItem'
 
 const Transportation = () => {
   return (

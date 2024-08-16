@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { cursorTo } from 'readline';
 
 interface INavLink {
   name: string;
