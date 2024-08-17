@@ -5,21 +5,27 @@ export interface IResourceInfo {
   title: string;
   description: string;
   imagePath: string;
+  acknowledgement: string;
 }
 export interface IResourceProps extends IResourceInfo {
   leftAlign: boolean;
 }
 
-const ResourceItem = ({title, description, imagePath,  leftAlign}: IResourceProps) => {
+const ResourceItem = ({title, description, imagePath,  acknowledgement, leftAlign}: IResourceProps) => {
   return (
     <Resource>
       <h3 className={leftAlign ? "" : "right"}>
         {title}
       </h3>
       <div className={leftAlign ? '' : 'right'}>
-        <div>
+        <figure>
           <img src={imagePath} alt={title + ' image'}/>
-        </div>
+          <figcaption
+            title={acknowledgement}
+          >
+              {acknowledgement}
+            </figcaption>
+        </figure>
         <p className='para'>
           {description}
         </p>
@@ -35,6 +41,7 @@ const Resource = styled.li`
   width: 90%;
   margin: 0 auto 40px;
   > h3{
+    padding: 0 12%;
     font-size: 1.8em;
     margin-top: 80px;
     margin-bottom: 10px;
@@ -46,18 +53,33 @@ const Resource = styled.li`
   > div {
     display: flex;
     gap: 20px;
-    > div {
-      flex: 0 0 20vw;
+    > figure {
+      position: relative;
+      width: 300px;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       > img {
-        width: 250px;
+        width: 300px;
         height: 300px;
         padding: 10px;
         border-radius: 20px;
         object-fit: fill;
         background-color: rgb(var(--accent));
+      }
+      > figcaption {
+        position: absolute;
+        top: 290px;
+        left: 0;
+        width: 290px;
+        height: 20px;
+        padding: 0 5px;
+        border-radius: 0 0 10px 10px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        background-color: rgba(var(--secondary-bg), 0.8)
       }
     }
   }
