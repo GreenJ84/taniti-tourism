@@ -6,7 +6,12 @@ const Home = () => {
   return (
     <>
       <Banner>
-        <img src='https://i.etsystatic.com/11810216/r/il/23a96e/3571518510/il_1588xN.3571518510_kd51.jpg' alt="Island overview"/>
+        <figure>
+          <img src='https://i.etsystatic.com/11810216/r/il/23a96e/3571518510/il_1588xN.3571518510_kd51.jpg' alt="Island overview"/>
+          <figcaption title="Etsy. (n.d.). Island overview [Photograph]. Etsy. https://i.etsystatic.com/11810216/r/il/23a96e/3571518510/il_1588xN.3571518510_kd51.jpg">
+            Etsy. (n.d.). Island overview [Photograph]. Etsy. https://i.etsystatic.com/11810216/r/il/23a96e/3571518510/il_1588xN.3571518510_kd51.jpg
+          </figcaption>
+        </figure>
         <h1>Come visit Taniti</h1>
       </Banner>
       <p className='para'>
@@ -49,6 +54,32 @@ const Banner = styled.div`
     font-size: 3em;
     text-align: center;
     color: rgb(var(--primary-bg));
+  }
+  > figure {
+    position: relative;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    > img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 30dvh;
+      object-fit: fill;
+    }
+    > figcaption {
+      position: absolute;
+      top: 28dvh;
+      left: 0;
+      width: 100%;
+      height: 20px;
+      padding: 0 5px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      background-color: rgba(var(--secondary-bg), 0.8)
+    }
   }
   > img {
     position: absolute;

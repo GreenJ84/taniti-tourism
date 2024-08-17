@@ -12,7 +12,12 @@ const Navigation = () => {
     <Header>
       <nav>
         <Link to="/" id="brand">
-          <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=306,fit=crop/AE05DJn12aclyvvO/logo-small-YZ9WJReWvKi9J4QL.png" alt="Taniti Brand" />
+          <figure>
+            <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=306,fit=crop/AE05DJn12aclyvvO/logo-small-YZ9WJReWvKi9J4QL.png" alt="Taniti Brand" title="Taniti. (n.d.). Taniti Brand [Logo]. Taniti. https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=306,fit=crop/AE05DJn12aclyvvO/logo-small-YZ9WJReWvKi9J4QL.png"/>
+            <figcaption>
+              Taniti. (n.d.). Taniti Brand [Logo]. Taniti. https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=306,fit=crop/AE05DJn12aclyvvO/logo-small-YZ9WJReWvKi9J4QL.png
+            </figcaption>
+          </figure>
         </Link>
         {!isHomePage &&
           <ul>
@@ -30,8 +35,14 @@ const Header = styled.header`
   width: 100vw;
   height: 12dvh;
   background-color: rgb(var(--secondary-bg));
-  > #brand, #brand > img {
-    max-width: 20vw;
+  > #brand, #brand > figure{
+    margin: 0;
+    > img {
+      max-width: 20vw;
+    }
+    > figcaption {
+      display: none;
+    }
   }
   > nav {
     display: flex;
